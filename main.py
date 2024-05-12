@@ -1,0 +1,37 @@
+import datetime
+
+stress_points = {}
+
+def check_stress_level(stress_level):
+    
+    if stress_level < 5:
+        return 10  
+    elif stress_level < 8:
+        return 5   
+    else:
+        return 0    
+def add_user(user_id):
+    
+    if user_id not in stress_points:
+        stress_points[user_id] = 0
+
+def update_stress_score(user_id, stress_level):
+    
+    points = check_stress_level(stress_level)
+    if user_id in stress_points:
+        stress_points[user_id] += points
+    else:
+        print(f"Usuário {user_id} não encontrado. Adicionando ao sistema.")
+        add_user(user_id)
+        stress_points[user_id] += points
+
+def get_stress_score(user_id):
+     
+    return stress_points.get(user_id, 0)
+
+def log_stress_level(user_id, stress_level):
+     
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    points = check_stress_level(stress_level)
+    print(f"{timestamp} - Usuário {user_id} registrou um nível de estresse de {stress_level} e ganhou {points} pontos.")
+    update_stress_score(user_id, stress_level)
