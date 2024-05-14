@@ -1,10 +1,8 @@
-import speech_recognition as sr # type: ignore
+import SpeechRecognition as sr # type: ignore
 import time
 
 def listen_voice():
-     
     r = sr.Recognizer()
-
     with sr.Microphone() as source:
         print("Diga algo...")
         audio = r.listen(source)
@@ -18,11 +16,14 @@ def listen_voice():
         return None
 
 def main():
-   
     while True:
         voice_text = listen_voice()
         if voice_text is not None:
             print(f"Você disse: {voice_text}")
-             
-if __name__ == "__main__":
-    main()
+
+def main():
+    while True:
+        voice_text = listen_voice()
+        if voice_text is not None:
+            print(f"Você disse: {voice_text}")
+        time.sleep(1)   
