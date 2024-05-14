@@ -7,15 +7,15 @@ def check_stress_level(stress_level):
     if stress_level < 5:
         return 10  
     elif stress_level < 8:
-        return 5   
+        return 5    
     else:
         return 0    
-def add_user(user_id):
+def add_user(user_id: int) -> None:
     
     if user_id not in stress_points:
         stress_points[user_id] = 0
 
-def update_stress_score(user_id, stress_level):
+def update_stress_score(user_id: int, stress_level: int) -> None:
     
     points = check_stress_level(stress_level)
     if user_id in stress_points:
@@ -25,11 +25,11 @@ def update_stress_score(user_id, stress_level):
         add_user(user_id)
         stress_points[user_id] += points
 
-def get_stress_score(user_id):
+def get_stress_score(user_id: int) -> int:
      
     return stress_points.get(user_id, 0)
 
-def log_stress_level(user_id, stress_level):
+def log_stress_level(user_id: int, stress_level: int) -> None:
      
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     points = check_stress_level(stress_level)
