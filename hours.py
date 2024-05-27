@@ -1,5 +1,7 @@
 import time
 
+hours_points = []
+
  def Hours(range)
     hours = range(1, 13) 
      points = [5* h for in hours]
