@@ -8,3 +8,5 @@ A ideia dos pontos é poder trocar em cupons de desconto ou moedas de certas loj
 Precisa verificar a syntax do programa, por que esse erro? Não sei, mas vou limpar o code.
 
 Limpei o code, mas a syntax ainda esta dando erro, vou estudar/elaborar melhor o code e tentar reconhecer meu erro.
+
+Preciso melhorar a logica de "hours", esta dando falha no script e pode gerar mais bugs futuramente
