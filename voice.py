@@ -6,14 +6,14 @@ def listen_voice():
     with sr.Microphone() as source:
         print("Diga algo...")
         audio = r.listen(source)
-
-    try:
-        text = r.recognize_google(audio, language='pt-BR')
-        print("Você disse: " + text)
-        return text
-    except:
-        print("Não foi possível reconhecer a fala.")
-        return None
+        
+        try:
+            text = r.recognize_google(audio, language='pt-BR')
+            print("Você disse: " + text)
+            return text
+            except:
+                print("Não foi possível reconhecer a fala.")
+                return None
 
 def main():
     while True:
