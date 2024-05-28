@@ -1,4 +1,6 @@
 import datetime
+import SpeechRecognition as sr # type: ignore
+import time
 
 stress_points = {}
 
@@ -33,3 +35,30 @@ def log_stress_level(user_id: int, stress_level: int) -> None:
     points = check_stress_level(stress_level)
     print(f"{timestamp} - Usuário {user_id} registrou um nível de estresse de {stress_level} e ganhou {points} pontos.")
     update_stress_score(user_id, stress_level)
+
+def listen_voice():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Diga algo...")
+        audio = r.listen(source)
+        
+        try:
+            text = r.recognize_google(audio, language='pt-BR')
+            print("Você disse: " + text)
+            return text
+            except:
+                print("Não foi possível reconhecer a fala.")
+                return None
+
+def main():
+    while True:
+        voice_text = listen_voice()
+        if voice_text is not None:
+            print(f"Você disse: {voice_text}")
+
+def main():
+    while True:
+        voice_text = listen_voice()
+        if voice_text is not None:
+            print(f"Você disse: {voice_text}")
+        time.sleep(1)   
