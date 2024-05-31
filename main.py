@@ -30,12 +30,20 @@ points = check_stress_level(stress_level)
 def get_stress_score(user_id: int) -> int:
 return stress_points.get(user_id, 0)
 
-def repeat(points, times=none)
-if time is none
-  while true:
-      yield object
-else: 
-    for i in range
+def accumulate(interable, function=operator.add, *, initial=none):
+    'return running totals'
+
+    interator = iter(iterable)
+    total = initial 
+    initial is none:
+      try:
+          total = next(iterator)
+     except StopIterator:
+         return
+  yield total
+ for element in iterator:
+     total = function(total, element)
+     yield total
 
 def log_stress_level(user_id: int, stress_level: int) -> None:
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
