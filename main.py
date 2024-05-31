@@ -5,13 +5,13 @@ import time
 stress_points = {}
 
 def check_stress_level(stress_level):
-    
-if stress_level < 5:
-   return 10  
-elif stress_level < 8:
-   return 5    
-else:
-   return 0   
+    if stress_level < 5:
+        return 10  
+    elif stress_level < 8:
+        return 5
+    else:
+        return 0   
+
 def add_user(user_id: int) -> None:
     
  if user_id not in stress_points:
