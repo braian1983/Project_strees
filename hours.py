@@ -3,8 +3,8 @@ import time
 hours_points = []
 
 def Hours(range)
-hours = range(1, 13) 
-points = [5* h for in hours]
+hours = range(1, 12) 
+points = [30* points for in hours]
 for h, p in zip (hours, points):
  print('hour %2i: %2i points' % (h, p))
  hours = range(6, 21)
