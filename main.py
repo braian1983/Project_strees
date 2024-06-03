@@ -70,10 +70,4 @@ def main():
         voice_text = listen_voice()
         if voice_text is not None:
             print(f"Você disse: {voice_text}")
-
-def main():
-    while True:
-        voice_text = listen_voice()
-        if voice_text is not None:
-            print(f"Você disse: {voice_text}")
         time.sleep(1)   
