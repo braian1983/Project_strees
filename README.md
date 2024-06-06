@@ -14,3 +14,5 @@ Preciso melhorar a logica de "hours", esta dando falha no script e pode gerar ma
 Vou rodar o script em um server local host, esta dando falha na minha maquina virtual, porem na maquina do meu trabalho, esta funcionando normal.
 
 Preciso de um front-end basico para ajustar certas linhas e reconhecer ainda mais os bugs que o console não apresenta
+
+Verificar link:https://www.infolivros.org/livros-pdf-gratis/informatica/hacking/
